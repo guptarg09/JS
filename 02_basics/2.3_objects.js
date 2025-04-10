@@ -1,5 +1,6 @@
 
-// *************object litrals************* 
+
+// *************creating objrct using object litrals************* 
 
 const mySymbol = Symbol("key1")
 
@@ -35,3 +36,16 @@ jsUser.greetingTwo = function(){
 
 console.log(jsUser.greeting())
 console.log(jsUser.greetingTwo())
+
+// adding properties outside of the object
+
+const person = {}  // empty object
+
+// adding properties
+person.name = "Ritesh"
+person.age = "21"
+person.eyeColor = "blue"
+
+// displaying data
+console.log(person.name)
+console.log(person.age)
