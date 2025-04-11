@@ -43,6 +43,7 @@ const add = (num1, num2) => {
 }
 console.log(add(2, 4))
 
+// if u not define the scope'{}' then u not have to use return keyword like below
 
 // implicit return
 const addAnother = (num1, num2) => (num1 + num2)
