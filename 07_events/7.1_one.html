@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #414141;
+        }
+        .img{
+            height: 150px;
+            width: 200px;
+            background-size: cover;
+        }
+        #google{
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <ul id="images">
+        <li><img src="1_img.jpg" alt="" class="img" id="img1"></li>
+        <li><img src="2_img.jpg" alt="" class="img" id="img2" <!--onclick="alert('hello')"--></li>
+        <li><img src="3_img.jpg" alt="" class="img" id="img3"></li>
+        <li><img src="4_img.jpg" alt="" class="img" id="img4"></li>
+        <li><img src="5_img.jpg" alt="" class="img" id="img5"></li>
+        <li><a href="https://google.com" id="google">google</a></li>
+    </ul>
+</body>
+<script>
+    // document.getElementById('img2').onclick = function(){
+    //     alert("second image clicked!")
+    // }
+
+    // document.getElementById('img2').addEventListener('click', function(){
+    //     alert("second image clicked!")
+    // })
+
+    // attatchEvent method
+    // jQuery - .on
+
+    // document.getElementById('img2').addEventListener('click', function(e){
+    //     console.log(e);
+    // }, false)
+
+    // event public(inside to outside) - flase(default, most used)
+    // event capturing(outside to inside) - true
+
+    document.getElementById('img2').addEventListener('click', function(e){
+        console.log("owl clicked");
+    }, true)
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("chicked inside the ul");
+        // e.stopPropagation(); // just like preventDefault
+    }, true)
+    // it is clled as event propagation
+     
+
+    document.getElementById('google').addEventListener('click', function(e){
+        console.log("google clicked");
+    }, false)
+
+      
+</script>
+</html> 
