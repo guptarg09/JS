@@ -29,16 +29,6 @@
     </ul>
 </body>
 <script>
-    // document.getElementById('img2').onclick = function(){
-    //     alert("second image clicked!")
-    // }
-
-    // document.getElementById('img2').addEventListener('click', function(){
-    //     alert("second image clicked!")
-    // })
-
-    // attatchEvent method
-    // jQuery - .on
 
     // document.getElementById('img2').addEventListener('click', function(e){
     //     console.log(e);
@@ -47,21 +37,40 @@
     // event public(inside to outside) - flase(default, most used)
     // event capturing(outside to inside) - true
 
-    document.getElementById('img2').addEventListener('click', function(e){
-        console.log("owl clicked");
-    }, true)
+    // document.getElementById('img2').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    // }, true)
 
     document.getElementById('images').addEventListener('click', function(e){
         console.log("chicked inside the ul");
         // e.stopPropagation(); // just like preventDefault
-    }, true)
+    }, false)
     // it is clled as event propagation
      
-
     document.getElementById('google').addEventListener('click', function(e){
-        console.log("google clicked");
-    }, false)
+    console.log("google clicked");
+    e.preventDefault();  // stop redirecting
+    e.stopPropagation(); // supposed to stop event bubbling
+}, false);
 
+
+// removing by clicking logic...
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName)
+        let removeIt = e.target.parentNode
+        if(e.target.tagName === 'IMG'){
+            let removeIt = e.target.parentNode
+            console.log(removeIt)
+            removeIt.remove()
+        }
+        // if u click on image then parent is li tag but if u click on li then parent become ul tag 
+        // it means if u click on li not images then ul means all images were removed
+
+
+
+        // removeIt.parentNode.removeChild(removeIt)  // you can also use it
+    },false )
       
 </script>
 </html> 
