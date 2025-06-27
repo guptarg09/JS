@@ -37,6 +37,23 @@ jsUser.greetingTwo = function(){
 console.log(jsUser.greeting())
 console.log(jsUser.greetingTwo())
 
+// creating new object
+const jsUser2 = {
+  name: "Ritesh",
+
+  greet1: function() {
+    console.log("Hello from greet1");  // prints directly
+  },
+
+  greet2: function() {
+    return "Hello from greet2";        // returns value
+  }
+};
+
+jsUser2.greet1();              //  prints: Hello from greet1
+console.log(jsUser2.greet2()); //  prints: Hello from greet2
+
+
 // adding properties outside of the object
 
 const person = {}  // empty object
